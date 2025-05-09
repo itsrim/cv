@@ -28,11 +28,21 @@
         .sidebar {
             flex: 1;
             background: #252525;
-            padding: 40px 32px;
+            padding: 40px 0;  /* Modifié : retrait du padding horizontal */
             min-width: 320px;
             display: flex;
             flex-direction: column;
             gap: 32px;
+            align-items: center;  /* Ajouté : centrage horizontal */
+        }
+        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: #333333;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 0 auto;  /* Modifié : centrage automatique */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            width: calc(100% - 80px);  /* Modifié : largeur avec marge égale */
+            box-sizing: border-box;
         }
         h1, h2, h3 {
             color: #4fc3f7;
@@ -506,6 +516,32 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                     I like challenges and follow new technologies (VR, AI, e-commerce, …)
                 </div>
             </div>
+
+            <div class="skills" style="background:#1a73e8;color:#fff;text-align:center;"> 
+                <div class="badges" style="justify-content:center;flex-wrap:wrap;gap:10px;display:flex;align-items:center;"> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="width:20px;height:20px;">
+                React / native
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" style="width:20px;height:20px;">
+                Vue / Node
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width:20px;height:20px;">
+                javascript, html, css
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:20px;height:20px;">
+                Python / Flask
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" style="width:20px;height:20px;">
+                PHP / Laravel
+                </span> 
+                </div> 
+                </div>
+
             <div class="languages">
                 <div class="section-title">Langues</div>
                 <table style="width:100%; margin-bottom: 12px;">
@@ -524,16 +560,16 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align:center;">French<br><span style="font-size:0.9em;color:#888;">Français</span><br>
+                        <td style="text-align:center; font-size:0.8em">French<br><span style="font-size:0.9em;color:#888;">Français</span><br>
                             <div style="color: #4fc3f7;">●●●●●</div>
                         </td>
-                        <td style="text-align:center;">English<br><span style="font-size:0.9em;color:#888;">Anglais</span><br>
+                        <td style="text-align:center; font-size:0.8em">English<br><span style="font-size:0.9em;color:#888;">Anglais</span><br>
                             <div style="color: #4fc3f7;">●●●●○</div>
                         </td>
-                        <td style="text-align:center;">Spanish<br><span style="font-size:0.9em;color:#888;">Espagnol</span><br>
+                        <td style="text-align:center; font-size:0.8em">Spanish<br><span style="font-size:0.9em;color:#888;">Espagnol</span><br>
                             <div style="color: #4fc3f7;">●●●○○</div>
                         </td>
-                        <td style="text-align:center;">Cambodian<br><span style="font-size:0.9em;color:#888;">Khmer</span><br>
+                        <td style="text-align:center; font-size:0.8em">Cambodian<br><span style="font-size:0.9em;color:#888;">Khmer</span><br>
                             <div style="color: #4fc3f7;">●●○○○</div>
                         </td>
                     </tr>
@@ -569,15 +605,7 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                 <div class="section-title">References</div>
                 <a href="https://www.linkedin.com/in/rim31/" target="_blank" style="color:#1976d2;">https://www.linkedin.com/in/rim31/</a>
             </div>
-            <div class="skills" style="background:#1a73e8;color:#fff;text-align:center;">
-                <div class="badges" style="justify-content:center;flex-wrap:wrap;gap:10px;">
-                    <span class="badge" style="background:#43aeea;">React / native</span>
-                    <span class="badge" style="background:#43aeea;">Vue / Node</span>
-                    <span class="badge" style="background:#43aeea;">javascript, html, css</span>
-                    <span class="badge" style="background:#43aeea;">Python / Flask</span>
-                    <span class="badge" style="background:#43aeea;">PHP / Laravel</span>
-                </div>
-            </div>
+           
         </div>
     </div>
 </body>
