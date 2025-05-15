@@ -336,6 +336,34 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                 margin-top: 12px;
             }
         }
+        /* Conteneur de l’onglet */
+        .tab-content {
+            width: 500px;       /* même largeur partout */
+        /* plus de overflow:hidden */
+        }
+        .tab-content {
+        width: 500px;
+        height: 350px;            /* hauteur fixe */
+        background: #1a1a1a;      /* ou la couleur de fond de votre section */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .tab-content img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;      /* = pas de découpe */
+        display: block;
+        border-radius: 8px;
+        }
+
+        /* (reste de vos styles d’onglets inchangés) */
+        .tab-container { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+        .tab.active { background: #4fc3f7; color: #1a1a1a; }
+        .tab:not(.active) { background: #333; color: #4fc3f7; }
+
     </style>
 </head>
 <body>
@@ -458,11 +486,11 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                 </div>
                 
                 <div class="tab-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button class="tab active" onclick="openTab(event, 'tab1')" style="padding: 8px 16px; background: #4fc3f7; color: #1a1a1a; border: none; border-radius: 4px; cursor: pointer;">City OpenData</button>
-                    <button class="tab" onclick="openTab(event, 'tab2')" style="padding: 8px 16px; background: #333; color: #4fc3f7; border: none; border-radius: 4px; cursor: pointer;">Roller dance</button>
-                    <button class="tab" onclick="openTab(event, 'tab3')" style="padding: 8px 16px; background: #333; color: #4fc3f7; border: none; border-radius: 4px; cursor: pointer;">MapStyle</button>
-                    <button class="tab" onclick="openTab(event, 'tab4')" style="padding: 8px 16px; background: #333; color: #4fc3f7; border: none; border-radius: 4px; cursor: pointer;">Chatbot IA</button>
-                    <button class="tab" onclick="openTab(event, 'tab5')" style="padding: 8px 16px; background: #333; color: #4fc3f7; border: none; border-radius: 4px; cursor: pointer;">App Travel</button>
+                    <button class="tab active" onclick="openTab(event, 'tab1')" >City OpenData</button>
+                    <button class="tab" onclick="openTab(event, 'tab2')" >Roller dance</button>
+                    <button class="tab" onclick="openTab(event, 'tab3')" >MapStyle</button>
+                    <button class="tab" onclick="openTab(event, 'tab4')" >Chatbot IA</button>
+                    <button class="tab" onclick="openTab(event, 'tab5')" >App Travel</button>
                 </div>
                 
                 <div id="tab1" class="tab-content" style="display: block;">
