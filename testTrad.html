@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n-key="pageTitle">CV – Olivier S.</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+      .lang-switcher {
+        position: absolute;
+        top: 16px;
+        right: 40px;
+        z-index: 10;
+      }
+      .switch {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 80px;
+        height: 30px;
+        background: #333;
+        border-radius: 34px;
+      }
+      .lang-label {
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        user-select: none;
+        color: #888;
+        transition: color 0.4s;
+      }
+      .switch input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .slider {
+        position: absolute;
+        width: 50%;
+        height: 26px;
+        background: #4fc3f7;
+        border-radius: 34px;
+        top: 2px;
+        left: 2px;
+        transition: left 0.4s;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+      }
+      .slider::before {
+        content: "FR";
+      }
+      .switch input:checked + .slider {
+        left: calc(100% - 2px - 50%);
+      }
+      .switch input:checked + .slider::before {
+        content: "EN";
+      }
+      .switch input:not(:checked) ~ .lang-label[data-lang="fr"],
+      .switch input:checked ~ .lang-label[data-lang="en"] {
+        color: #fff;
+      }
+      .header-cv {
+        position: relative;
+        width: 100%;
+        background: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+      }
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        z-index: 1;
+      }
+      .header-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 40px 0;
+        flex-wrap: wrap;
+      }
+      .header-photo {
+        margin-right: 32px;
+      }
+      .header-info {
+        flex: 2;
+        min-width: 200px;
+      }
+      .header-name {
+        font-size: 2.1rem;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .header-title {
+        font-size: 1.6rem;
+        color: #fff;
+        font-weight: 500;
+      }
+      .header-contact {
+        text-align: right;
+        flex: 1;
+        color: #fff;
+        min-width: 200px;
+      }
+      .header-contact a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .header-contact a:hover {
+        text-decoration: underline;
+      }
+      .cv-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #2d2d2d;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .main {
+        flex: 2;
+        padding: 40px 32px 32px 40px;
+      }
+      .sidebar {
+        flex: 1;
+        background: #252525;
+        padding: 40px 0;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+      }
+      .resume, .languages, .sport, .diploma, .references, .skills {
+        background: #333333;
+        border-radius: 8px;
+        padding: 18px 20px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        width: calc(100% - 80px);
+        box-sizing: border-box;
+      }
+      .section-title {
+        font-weight: bold;
+        color: #4fc3f7;
+        margin-bottom: 8px;
+        font-size: 1.1em;
+      }
+      .tab-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .tab {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #333;
+        color: #4fc3f7;
+      }
+      .tab.active {
+        background: #4fc3f7;
+        color: #1a1a1a;
+      }
+      .tab-content {
+        width: 500px;
+      }
+      .tab-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+      @media (max-width: 900px) {
+        .cv-container {
+          flex-direction: column;
+        }
+        .sidebar {
+          min-width: unset;
+          padding: 24px 16px;
+        }
+        .main {
+          padding: 24px 16px 16px 16px;
+        }
+        .resume, .skills, .languages, .sport, .diploma, .references {
+          margin: 0 8px;
+        }
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+        .header-photo {
+          margin: 0 auto 20px;
+        }
+        .header-info {
+          margin-bottom: 20px;
+        }
+        .header-contact {
+          text-align: center;
+        }
+      }
+      .projects {
+        background: #252525;
+        border-radius: 8px;
+        padding: 18px 20px;
+        margin-top: 32px;
+      }
+      .tab-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .tab {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #333;
+        color: #4fc3f7;
+        transition: all 0.3s ease;
+      }
+      .tab.active {
+        background: #4fc3f7;
+        color: #1a1a1a;
+      }
+      .tab-content-container {
+        position: relative;
+        min-height: 400px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .tab-content {
+        display: none;
+        padding: 20px;
+        color: #e0e0e0;
+      }
+      .tab-content p {
+        margin-bottom: 16px;
+      }
+      .image-container {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #1a1a1a;
+        border-radius: 8px;
+      }
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+      .tab-content a {
+        color: #4fc3f7;
+        text-decoration: none;
+      }
+      .tab-content a:hover {
+        text-decoration: underline;
+      }
+      .badge {
+        background: #43aeea;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+      }
+      .badge img {
+        width: 20px;
+        height: 20px;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+      }
+      .languages table {
+        width: 100%;
+        margin-bottom: 0;
+        border-spacing: 0;
+      }
+      .languages td {
+        text-align: center;
+        padding: 8px 4px;
+        font-size: 0.85em;
+      }
+      .languages img {
+        width: 32px;
+        height: 32px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      }
+      .languages .language-level {
+        color: #4fc3f7;
+        letter-spacing: 2px;
+        font-size: 1.1em;
+        margin-top: 4px;
+      }
+      .sport .journeys {
+        margin-top: 12px;
+        font-style: italic;
+        color: #1976d2;
+        font-size: 0.9em;
+      }
+      .diploma b {
+        color: #4fc3f7;
+        font-weight: 600;
+      }
+      .diploma br {
+        margin-bottom: 4px;
+      }
+      .header-photo img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-cv">
+      <div class="header-bg"></div>
+      <div class="header-content">
+        <div class="header-photo">
+          <img
+            src="https://cdn.intra.42.fr/users/9a45b7b744ea6b6475634302561f34db/oseng.jpg"
+            alt="Photo Olivier S."
+          />
+        </div>
+        <div class="header-info">
+          <div class="header-name" data-i18n-key="headerName">Olivier S.</div>
+          <div class="header-title" data-i18n-key="headerTitle">
+            Développeur
+          </div>
+        </div>
+        <div class="header-contact">
+          <div class="header-email">os...@...42.fr</div>
+          <div class="header-phone">+33 6......</div>
+          <a
+            href="https://www.linkedin.com/in/rim31/"
+            target="_blank"
+            data-i18n-key="linkedinUrl"
+            >https://www.linkedin.com/in/rim31/</a
+          >
+        </div>
+        <div class="lang-switcher">
+          <label class="switch">
+            <span class="lang-label" data-lang="fr">FR</span>
+            <input type="checkbox" id="lang-toggle" />
+            <span class="slider"></span>
+            <span class="lang-label" data-lang="en">EN</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-container">
+      <div class="main">
+        <h1 data-i18n-key="experience">Expérience</h1>
+        <table
+          class="experience-table"
+          style="width: 100%; border-collapse: collapse"
+        >
+          <!-- MyUnisoft -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="myunisoftHeader"
+            >
+              MyUnisoft<br /><span
+                style="font-size: 0.95em; color: #888"
+                data-i18n-key="myunisoftDate"
+                >Depuis avril 2021</span
+              ><br /><img
+                src="https://myunisoft.fr/wp-content/uploads/2024/05/Logo-header.png"
+                alt="Logo MyUnisoft"
+                style="
+                  width: 80px;
+                  margin-top: 8px;
+                  background: #fff;
+                  padding: 5px;
+                  border-radius: 4px;
+                "
+              />
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="myunisoftTitle"
+                >Expert SaaS Comptable : Développeur frontend senior</span
+              >
+              <ul class="job-list">
+                <li data-i18n-key="myunisoft1">
+                  Création d'un chatbot IA avec le modèle Claude AI
+                </li>
+                <li data-i18n-key="myunisoft2">
+                  Service de suivi utilisateur enregistrant toutes les actions
+                  clients (CRUD et clics)
+                </li>
+                <li data-i18n-key="myunisoft3">
+                  Implémentation de Cypress pour tests E2E
+                </li>
+                <li data-i18n-key="myunisoft4">
+                  Refactorisation du logiciel de prêts : taux variable,
+                  constant, in fine
+                </li>
+                <li data-i18n-key="myunisoft5">
+                  Amélioration de l'OCR : conversion d'images de factures en
+                  données comptables
+                </li>
+              </ul>
+              <div class="techno" data-i18n-key="myunisoftTech">
+                Techno : React, Redux, MUI, Confluence, Jira, Jest, Cypress,
+                CSS, HTML, JavaScript
+              </div>
+            </td>
+          </tr>
+          <!-- Eee.do -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="eedoHeader"
+            >
+              Eee.do<br /><span
+                style="font-size: 0.95em; color: #888"
+                data-i18n-key="eedoDate"
+                >Octobre 2020 – Mars 2021</span
+              ><br /><img
+                src="https://eee.do/wp-content/uploads/2017/01/eeedo_logo_white_500x100-250x50@2x.png"
+                alt="Logo Eee.do"
+                style="width: 80px; margin-top: 8px; background: #1a73e8; padding: 5px; border-radius: 4px;"
+              />
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="eedoTitle"
+                >Développeur Fullstack, Finlande</span
+              >
+              <ul class="job-list">
+                <li data-i18n-key="eedo1">
+                  SaaS de service client : ajout du suivi du temps, tests
+                  d'intégration, paramètres clients, débogage…
+                </li>
+                <li data-i18n-key="eedo2">
+                  Développement de fonctionnalités, releases et déploiement en
+                  marque blanche
+                </li>
+              </ul>
+              <div class="techno" data-i18n-key="eedoTech">
+                Techno : React, Redux, Node.js, Docker, Kubernetes, Confluence,
+                Jira, Jest, Cypress, CSS
+              </div>
+            </td>
+          </tr>
+          <!-- Freelance -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="freelanceHeader"
+            >
+              Freelance<br /><span
+                style="font-size: 0.95em; color: #888"
+                data-i18n-key="freelanceDate"
+                >Fév – Sep 2020</span
+              ><br /><img
+                src="https://cdn-ilcplod.nitrocdn.com/dCmElblKuSxWBsjjwqhWacoMKlodKItv/assets/images/optimized/astekgroup.fr/wp-content/uploads/2024/12/b7ae8d00-1752-4598-aae2-3bf2dee98d1e-1.png"
+                alt="Logo Freelance"
+                style="
+                  width: 80px;
+                  margin-top: 8px;
+                  background: #fff;
+                  padding: 5px;
+                  border-radius: 4px;
+                "
+              />
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="freelanceTitle"
+                >Développeur logiciel Fullstack</span
+              >
+              <ul class="job-list">
+                <li data-i18n-key="freelance1">
+                  Pause COVID-19 :
+                  <a href="https://rim31.github.io/covid19" target="_blank" style="color:#fff;text-decoration:none;">Personal COVID project</a>
+                </li>
+                <li data-i18n-key="freelance2">
+                  Refonte de site : backend, front-end, design, POC
+                  technologique
+                </li>
+                <li data-i18n-key="freelance3">
+                  Dashboard Open Data de la ville de Turku – Astek Consulting
+                </li>
+              </ul>
+              <div class="techno" data-i18n-key="freelanceTech">
+                Techno : React.js/Native, Vue.js, TypeScript, Python/Django,
+                GraphQL, Git, HTML, CSS
+              </div>
+            </td>
+          </tr>
+          <!-- INPI -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="inpiHeader"
+            >
+              INPI : inpi.fr<br /><span
+                style="font-size: 0.95em; color: #888"
+                data-i18n-key="inpiDate"
+                >2018 – 2019</span
+              ><br /><img
+                src="https://www.inpi.fr/themes/custom/inpi/logo.png"
+                alt="Logo INPI"
+                style="
+                  width: 80px;
+                  margin-top: 8px;
+                  background: #fff;
+                  padding: 5px;
+                  border-radius: 4px;
+                "
+              />
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="inpiTitle"
+                >Développeur – Transformation IT des brevets – Gouvernement
+                français</span
+              >
+              <ul class="job-list">
+                <li data-i18n-key="inpi1">
+                  Projet IA pour classification de brevets : ordonnancement des
+                  textes pour ingénieurs
+                </li>
+                <li data-i18n-key="inpi2">
+                  Chef de projet dépôt de marque : transformation de fax en site
+                  web
+                </li>
+                <li data-i18n-key="inpi3">
+                  Responsable logiciel : débogage de logiciels hérités, support
+                  client
+                </li>
+                <li data-i18n-key="inpi4">Gestion de 30 logiciels hérités</li>
+              </ul>
+              <div class="techno" data-i18n-key="inpiTech">
+                Techno : PHP, JavaScript, MySQL, Oracle, Bash, Git, HTML, CSS
+              </div>
+            </td>
+          </tr>
+          <!-- vente-privée -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="vpHeader"
+            >
+              vente-privée : veepee.com<br /><span
+                style="font-size: 0.95em; color: #888"
+                data-i18n-key="vpDate"
+                >2017 – 2018</span
+              ><br /><img
+                src="https://www.guide-vente-privee.fr/data/medias/logos/vente-privee-com.png"
+                alt="logo Veepee"
+                style="width: 80px; margin-top: 8px; background: #fff; padding: 5px; border-radius: 4px;"
+              />
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="vpTitle"
+                >Développeur logiciel – Innovation Lab42 R&D</span
+              >
+              <ul class="job-list">
+                <li data-i18n-key="vp1">
+                  E-commerce : R&D nouvelles technologies
+                </li>
+                <li data-i18n-key="vp2">
+                  Création logiciel caméra : contrôle robot pour 100k
+                  photos/mois
+                </li>
+                <li data-i18n-key="vp3">
+                  Machine learning : détection de vêtements/styles, suggestion
+                  de produits en stock
+                </li>
+                <li data-i18n-key="vp4">
+                  Proof of Concept avec Kafka : test 4 millions connexions/s
+                </li>
+              </ul>
+              <div class="techno" data-i18n-key="vpTech">
+                Techno : Node.js, Vue.js, C++, DMX, APIs, Git, HTML, CSS,
+                Python/Flask, React, MySQL, Docker, AWS, Kafka
+              </div>
+            </td>
+          </tr>
+          <!-- Veolia -->
+          <tr>
+            <td
+              style="
+                vertical-align: top;
+                padding: 12px 12px 24px 0;
+                width: 100px;
+                font-weight: bold;
+              "
+              data-i18n-key="veoliaHeader"
+            >
+              VEOLIA EAU
+            </td>
+            <td style="vertical-align: top; padding: 12px 0 24px 0">
+              <span class="job-title" data-i18n-key="veoliaTitle"
+                >Ingénieur chimiste env./Chef de projet</span
+              >
+              <span data-i18n-key="veoliaDate">2010 – 2014</span>
+              <ul class="job-list">
+                <li data-i18n-key="veolia1">
+                  Veolia / Antea Group / UPSA / Fluids Services
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <div class="projects">
+          <div class="section-title" data-i18n-key="projectsTitle">Projets :</div>
+          <div style="font-weight:bold;color:#fff;margin-bottom:16px;">
+            <a href="https://github.com/itsrim" target="_blank" style="color:#fff;text-decoration:none;">@https://github.com/itsrim</a>
+          </div>
+          
+          <div class="tab-container">
+            <button class="tab active" onclick="openTab(event, 'tab1')" data-i18n-key="tab1Title">City OpenData</button>
+            <button class="tab" onclick="openTab(event, 'tab2')" data-i18n-key="tab2Title">Roller dance</button>
+            <button class="tab" onclick="openTab(event, 'tab3')" data-i18n-key="tab3Title">MapStyle</button>
+            <button class="tab" onclick="openTab(event, 'tab4')" data-i18n-key="tab4Title">Chatbot IA</button>
+            <button class="tab" onclick="openTab(event, 'tab5')" data-i18n-key="tab5Title">App Travel</button>
+          </div>
+          
+          <div class="tab-content-container">
+            <div id="tab1" class="tab-content">
+              <p data-i18n-key="proj1Desc">2ème prix : Hackathon OpenData Turku 2020 <a href="https://github.com/itsrim/turku">github</a></p>
+              <div class="image-container">
+                <img src="https://github.com/itsrim/turku/raw/master/docs/A.png" alt="Covid Dashboard">
+              </div>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+              <p data-i18n-key="proj2Desc">Paris roller dance<a href="https://parisrollerdance.fr">website</a></p>
+              <div class="image-container">
+                <img src="https://raw.githubusercontent.com/rim31/rim31.github.io/refs/heads/master/images/4.jpg" alt="Travel Demo">
+              </div>
+            </div>
+            
+            <div id="tab3" class="tab-content">
+              <p data-i18n-key="proj3Desc">2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href="https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42">Institut Français de la Mode</a></p>
+              <div class="image-container">
+                <img src="https://d2mulcrgfv1yq5.cloudfront.net/images/_ratio1x1_crop_5/Ressources.jpg" alt="MapStyle Demo">
+              </div>
+            </div>
+
+            <div id="tab4" class="tab-content">
+              <p data-i18n-key="proj4Desc">Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href="https://github.com/itsrim/cat">github</a></p>
+              <div class="image-container">
+                <img src="https://raw.githubusercontent.com/itsrim/cat/main/chatbot.gif" alt="Chatbot Demo">
+              </div>
+            </div>
+
+            <div id="tab5" class="tab-content">
+              <p data-i18n-key="proj5Desc">test app travel PWA, react, ts, vite, bulma <a href="https://github.com/itsrim/voyage">github</a></p>
+              <div class="image-container">
+                <img src="https://raw.githubusercontent.com/itsrim/voyage/refs/heads/main/portugay.png" alt="Travel Demo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="resume">
+          <div class="section-title" data-i18n-key="resumeTitle">Résumé</div>
+          <div style="font-size:1em;line-height:1.5;" data-i18n-key="resumeText">
+            Développeur logiciel depuis 8 ans, formé à la 42 Coding School Paris, j'ai enrichi mon expérience d'ingénieur chimiste avec l'informatique.<br><br>
+            Je développe en full-stack (front, back, mobile) dans différents langages. J'aime les challenges et suis les nouvelles technologies (VR, IA, e-commerce...).
+          </div>
+        </div>
+
+        <div class="skills" style="background:#1a73e8;color:#fff;text-align:center;"> 
+          <div class="badges" style="justify-content:center;flex-wrap:wrap;gap:10px;display:flex;align-items:center;"> 
+            <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="width:20px;height:20px;">
+              <span data-i18n-key="skillReact">React / native</span>
+            </span> 
+            <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" style="width:20px;height:20px;">
+              <span data-i18n-key="skillVue">Vue / Node</span>
+            </span> 
+            <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width:20px;height:20px;">
+              <span data-i18n-key="skillJs">javascript, html, css</span>
+            </span> 
+            <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:20px;height:20px;">
+              <span data-i18n-key="skillPython">Python / Flask</span>
+            </span> 
+            <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" style="width:20px;height:20px;">
+              <span data-i18n-key="skillPhp">PHP / Laravel</span>
+            </span> 
+          </div> 
+        </div>
+
+        <div class="languages">
+          <div class="section-title" data-i18n-key="languagesTitle">Langues</div>
+          <table style="width:100%; margin-bottom: 12px;">
+            <tr>
+              <td style="text-align:center; padding: 8px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" title="Français" style="width:32px; height:32px;">
+              </td>
+              <td style="text-align:center; padding: 8px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="Anglais" title="Anglais" style="width:32px; height:32px;">
+              </td>
+              <td style="text-align:center; padding: 8px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Espagnol" title="Espagnol" style="width:32px; height:32px;">
+              </td>
+              <td style="text-align:center; padding: 8px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg" alt="Cambodgien" title="Cambodgien" style="width:32px; height:32px;">
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:center; font-size:0.8em">
+                <span data-i18n-key="langFrench">French</span><br>
+                <span style="font-size:0.9em;color:#888;" data-i18n-key="langFrenchSub">Français</span><br>
+                <div style="color: #4fc3f7;">●●●●●</div>
+              </td>
+              <td style="text-align:center; font-size:0.8em">
+                <span data-i18n-key="langEnglish">English</span><br>
+                <span style="font-size:0.9em;color:#888;" data-i18n-key="langEnglishSub">Anglais</span><br>
+                <div style="color: #4fc3f7;">●●●●○</div>
+              </td>
+              <td style="text-align:center; font-size:0.8em">
+                <span data-i18n-key="langSpanish">Spanish</span><br>
+                <span style="font-size:0.9em;color:#888;" data-i18n-key="langSpanishSub">Espagnol</span><br>
+                <div style="color: #4fc3f7;">●●●○○</div>
+              </td>
+              <td style="text-align:center; font-size:0.8em">
+                <span data-i18n-key="langCambodian">Cambodian</span><br>
+                <span style="font-size:0.9em;color:#888;" data-i18n-key="langCambodianSub">Khmer</span><br>
+                <div style="color: #4fc3f7;">●●○○○</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sport">
+          <div class="section-title" data-i18n-key="sportTitle">Sport & leisure</div>
+          <div style="font-size:1em;line-height:1.5;">
+            <a href="https://www.parisrollerdance.fr" target="_blank" style="color:#1976d2;text-decoration:none;">www.parisrollerdance.fr</a><br>
+            <span data-i18n-key="sportRoller">Roller skating : 25 Years</span><br>
+            <span data-i18n-key="sportHockey">- Roller Hockey : level National 4</span><br>
+            <span data-i18n-key="sportTypes">- Ride, artistic, derby, dance</span><br>
+            <span data-i18n-key="sportTeacher">- Roller skating Teacher</span><br>
+            <div style="margin-top:10px;font-style:italic;color:#1976d2;" data-i18n-key="sportJourneys">
+              Journeys : Romania, Italy, Spain, England, Czech, Sweden, Estonia, Netherlands, Finland, Portugal
+            </div>
+          </div>
+        </div>
+
+        <div class="diploma">
+          <div class="section-title" data-i18n-key="diplomaTitle">Diploma</div>
+          <div style="font-size:1em;line-height:1.5;">
+            <b data-i18n-key="diploma42">2017 : Ecole 42</b> : <a href="https://www.42.fr" target="_blank" style="color:#1976d2;">www.42.fr</a><br>
+            <span data-i18n-key="diplomaProjects">Projects</span> : <a href="https://github.com/itsrim" target="_blank" style="color:#1976d2;">https://github.com/itsrim</a><br>
+            <span data-i18n-key="diplomaSkills">- algorithms, fractal, website, 3D, games</span><br>
+            <span data-i18n-key="diplomaLanguages">- langages : C, C++, PHP, JS, iOS</span><br>
+            <br>
+            <b data-i18n-key="diplomaMaster">2010 : Master 2</b> <span data-i18n-key="diplomaMasterDesc">process physics - chemistry : University Toulouse III</span><br>
+            <span data-i18n-key="diplomaProcess">- process, quality, methods</span><br>
+            <span data-i18n-key="diplomaManagement">- management</span>
+          </div>
+        </div>
+
+        <div class="references">
+          <div class="section-title" data-i18n-key="referencesTitle">References</div>
+          <a href="https://www.linkedin.com/in/rim31/" target="_blank" style="color:#1976d2;">https://www.linkedin.com/in/rim31/</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const i18n = {
+        fr: {
+          pageTitle: "CV – Olivier S.",
+          headerName: "Olivier S.",
+          headerTitle: "Développeur",
+          linkedinUrl: "https://www.linkedin.com/in/rim31/",
+          experienceTitle: "Expérience",
+          myunisoftHeader: "MyUnisoft",
+          myunisoftDate: "Depuis avril 2021",
+          myunisoftTitle: "Expert SaaS Comptable : Développeur frontend senior",
+          myunisoft1: "Création d'un chatbot IA avec le modèle Claude ai",
+          myunisoft2: "Service de suivi utilisateur enregistrant toutes les actions des clients (CRUD et clics)",
+          myunisoft3: "Implémentation de Cypress pour les tests e2e",
+          myunisoft4: "Refactoring du logiciel de prêt : taux variable, constant, in fine",
+          myunisoft5: "Amélioration de l'OCR, lecture des images de factures converties en données comptables",
+          myunisoftTech: "Techno : React, Redux, Mui, Confluence, Jira, Jest cypress, css, html, javascript",
+          eedoHeader: "Eee.do",
+          eedoDate: "Octobre 2020 – Mars 2021",
+          eedoTitle: "Développeur Fullstack, Finlande",
+          eedo1: "Saas de service client : ajout du suivi du temps, tests d'intégration, paramètres clients, débogage,…",
+          eedo2: "Développement de fonctionnalités/ releases/ déploiement dans le logiciel white brand",
+          eedoTech: "Techno : React, Redux, Node JS, Docker, Kubernetes, Confluence, Jira, Jest cypress, css",
+          freelanceHeader: "Freelance",
+          freelanceDate: "Fév – Sep 2020",
+          freelanceTitle: "Software Developer Fullstack",
+          freelance1: "Pause COVID-19 : <a href='https://rim31.github.io/covid19' target='_blank' style='color:#fff;text-decoration:none;'>Personal COVID project</a>",
+          freelance2: "Website overhaul: backend, frontend, design, tech POC",
+          freelance3: "Open Data dashboard for Turku city – Astek Consulting",
+          freelanceTech: "Tech: React.js/Native, Vue.js, TypeScript, Python/Django, GraphQL, Git, HTML, CSS",
+          inpiHeader: "INPI: inpi.fr",
+          inpiDate: "2018 – 2019",
+          inpiTitle: "Developer – IT transformation of patents – French Government",
+          inpi1: "AI project for patent classification: ordering texts for engineers",
+          inpi2: "Brand deposit project manager: fax to website transformation",
+          inpi3: "Software manager: legacy software debugging, customer support",
+          inpi4: "Management of 30 legacy applications",
+          inpiTech: "Tech: PHP, JavaScript, MySQL, Oracle, Bash, Git, HTML, CSS",
+          vpHeader: "vente-privée: veepee.com",
+          vpDate: "2017 – 2018",
+          vpTitle: "Software Developer – Lab42 Innovation R&D",
+          vp1: "E-commerce: R&D in new technologies",
+          vp2: "Camera software development: robot control for 100k photos/month",
+          vp3: "Machine learning: clothing/style detection and product suggestions",
+          vp4: "Kafka PoC: testing 4 million connections/sec",
+          vpTech: "Tech: Node.js, Vue.js, C++, DMX, APIs, Git, HTML, CSS, Python/Flask, React, MySQL, Docker, AWS, Kafka",
+          veoliaHeader: "VEOLIA EAU",
+          veoliaTitle: "Ingénieur chimiste env./Chef de projet",
+          veoliaDate: "2010 – 2014",
+          veolia1: "Veolia / Antea Group / UPSA / Fluids Services",
+          projectsTitle: "Projets",
+          tab1Title: "City OpenData",
+          tab2Title: "Roller dance",
+          tab3Title: "MapStyle",
+          tab4Title: "Chatbot IA",
+          tab5Title: "App Travel",
+          proj1Desc: "2ème prix : Hackathon OpenData Turku 2020 <a href='https://github.com/itsrim/turku'>github</a>",
+          proj2Desc: "Paris roller dance<a href='https://parisrollerdance.fr'>website</a>",
+          proj3Desc: "2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href='https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42'>Institut Français de la Mode</a>",
+          proj4Desc: "Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href='https://github.com/itsrim/cat'>github</a>",
+          proj5Desc: "test app travel PWA, react, ts, vite, bulma <a href='https://github.com/itsrim/voyage'>github</a>",
+          resumeTitle: "Résumé",
+          resumeText: "Développeur logiciel depuis 8 ans, formé à la 42 Coding School Paris, j'ai enrichi mon expérience d'ingénieur chimiste avec l'informatique.<br><br>Je développe en full-stack (front, back, mobile) dans différents langages. J'aime les challenges et suis les nouvelles technologies (VR, IA, e-commerce...).",
+          skillsTitle: "Skills",
+          languagesTitle: "Languages",
+          sportTitle: "Sport & loisirs",
+          diplomaTitle: "Diplôme",
+          referencesTitle: "Références",
+          skillReact: "React / native",
+          skillVue: "Vue / Node",
+          skillJs: "javascript, html, css",
+          skillPython: "Python / Flask",
+          skillPhp: "PHP / Laravel",
+          langFrench: "Français",
+          langFrenchSub: "Français",
+          langEnglish: "Anglais",
+          langEnglishSub: "Anglais",
+          langSpanish: "Espagnol",
+          langSpanishSub: "Espagnol",
+          langCambodian: "Cambodgien",
+          langCambodianSub: "Khmer",
+          sportRoller: "Roller skating : 25 ans",
+          sportHockey: "- Roller Hockey : niveau National 4",
+          sportTypes: "- Randonnée, artistique, derby, danse",
+          sportTeacher: "- Professeur de roller",
+          sportJourneys: "Voyages : Roumanie, Italie, Espagne, Angleterre, République Tchèque, Suède, Estonie, Pays-Bas, Finlande, Portugal",
+          diploma42: "2017 : Ecole 42",
+          diplomaProjects: "Projets",
+          diplomaSkills: "- algorithmes, fractales, sites web, 3D, jeux",
+          diplomaLanguages: "- langages : C, C++, PHP, JS, iOS",
+          diplomaMaster: "2010 : Master 2",
+          diplomaMasterDesc: "procédés physique-chimie : Université Toulouse III",
+          diplomaProcess: "- procédés, qualité, méthodes",
+          diplomaManagement: "- management"
+        },
+        en: {
+          pageTitle: "CV – Olivier S.",
+          headerName: "Olivier S.",
+          headerTitle: "Developer",
+          linkedinUrl: "https://www.linkedin.com/in/rim31/",
+          experienceTitle: "Experience",
+          myunisoftHeader: "MyUnisoft",
+          myunisoftDate: "Since April 2021",
+          myunisoftTitle: "Expert Accounting Saas : Senior frontend developer",
+          myunisoft1: "Creation of a chatbot IA with Claude ai model",
+          myunisoft2: "User tracking service logging every customer's actions (CRUD and click)",
+          myunisoft3: "Cypress implementation for e2e testing",
+          myunisoft4: "Refactoring Loan's software : rate variable, constant, in fine",
+          myunisoft5: "OCR improvement, read bill's picture convert to accounting data",
+          myunisoftTech: "Tech : React, Redux, Mui, Confluence, Jira, Jest cypress, css, html, javascript",
+          eedoHeader: "Eee.do",
+          eedoDate: "Oct 20 / Mar 21",
+          eedoTitle: "Fullstack Developer, Finland",
+          eedo1: "Customer service SaaS: added time tracking, integration testing, customer settings, debugging,…",
+          eedo2: "Developing features, releases and deployment in white-label software",
+          eedoTech: "Tech: React, Redux, Node JS, Docker, Kubernetes, Confluence, Jira, Jest cypress, css",
+          freelanceHeader: "Freelance",
+          freelanceDate: "Feb – Sep 2020",
+          freelanceTitle: "Software Developer Fullstack",
+          freelance1: "COVID-19 break: <a href='https://rim31.github.io/covid19' target='_blank' style='color:#fff;text-decoration:none;'>Personal COVID project</a>",
+          freelance2: "Website overhaul: backend, frontend, design, tech POC",
+          freelance3: "Open Data dashboard for Turku city – Astek Consulting",
+          freelanceTech: "Tech: React.js/Native, Vue.js, TypeScript, Python/Django, GraphQL, Git, HTML, CSS",
+          inpiHeader: "INPI: inpi.fr",
+          inpiDate: "2018 – 2019",
+          inpiTitle: "Developer – IT transformation of patents – French Government",
+          inpi1: "AI project for patent classification: ordering texts for engineers",
+          inpi2: "Brand deposit project manager: fax to website transformation",
+          inpi3: "Software manager: legacy software debugging, customer support",
+          inpi4: "Management of 30 legacy applications",
+          inpiTech: "Tech: PHP, JavaScript, MySQL, Oracle, Bash, Git, HTML, CSS",
+          vpHeader: "vente-privée: veepee.com",
+          vpDate: "2017 – 2018",
+          vpTitle: "Software Developer – Lab42 Innovation R&D",
+          vp1: "E-commerce: R&D in new technologies",
+          vp2: "Camera software development: robot control for 100k photos/month",
+          vp3: "Machine learning: clothing/style detection and product suggestions",
+          vp4: "Kafka PoC: testing 4 million connections/sec",
+          vpTech: "Tech: Node.js, Vue.js, C++, DMX, APIs, Git, HTML, CSS, Python/Flask, React, MySQL, Docker, AWS, Kafka",
+          veoliaHeader: "VEOLIA EAU",
+          veoliaTitle: "Chemistry Environment Engineer / Project Manager",
+          veoliaDate: "2010 – 2014",
+          veolia1: "Veolia / Antea Group / UPSA / Fluids Services",
+          projectsTitle: "Projects",
+          tab1Title: "City OpenData",
+          tab2Title: "Roller dance",
+          tab3Title: "MapStyle",
+          tab4Title: "Chatbot IA",
+          tab5Title: "App Travel",
+          proj1Desc: "2nd prize: Hackathon OpenData Turku 2020 <a href='https://github.com/itsrim/turku'>Github</a>",
+          proj2Desc: "Paris roller dance<a href='https://parisrollerdance.fr'>website</a>",
+          proj3Desc: "2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href='https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42'>Institut Français de la Mode</a>",
+          proj4Desc: "Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href='https://github.com/itsrim/cat'>github</a>",
+          proj5Desc: "test app travel PWA, react, ts, vite, bulma <a href='https://github.com/itsrim/voyage'>github</a>",
+          resumeTitle: "Resume",
+          resumeText: "Software developer with 8 years of experience trained at 42 Coding School Paris, I have enriched my background as a chemical engineer with CS.<br><br>I develop full-stack (front, back, mobile) in various languages. I love challenges and follow new tech (VR, AI, e-commerce...).",
+          skillsTitle: "Skills",
+          languagesTitle: "Languages",
+          sportTitle: "Sport & leisure",
+          diplomaTitle: "Diploma",
+          referencesTitle: "References",
+          skillReact: "React / native",
+          skillVue: "Vue / Node",
+          skillJs: "javascript, html, css",
+          skillPython: "Python / Flask",
+          skillPhp: "PHP / Laravel",
+          langFrench: "French",
+          langFrenchSub: "Français",
+          langEnglish: "English",
+          langEnglishSub: "Anglais",
+          langSpanish: "Spanish",
+          langSpanishSub: "Espagnol",
+          langCambodian: "Cambodian",
+          langCambodianSub: "Khmer",
+          sportRoller: "Roller skating : 25 Years",
+          sportHockey: "- Roller Hockey : level National 4",
+          sportTypes: "- Ride, artistic, derby, dance",
+          sportTeacher: "- Roller skating Teacher",
+          sportJourneys: "Journeys : Romania, Italy, Spain, England, Czech, Sweden, Estonia, Netherlands, Finland, Portugal",
+          diploma42: "2017 : Ecole 42",
+          diplomaProjects: "Projects",
+          diplomaSkills: "- algorithms, fractal, website, 3D, games",
+          diplomaLanguages: "- languages : C, C++, PHP, JS, iOS",
+          diplomaMaster: "2010 : Master 2",
+          diplomaMasterDesc: "process physics - chemistry : University Toulouse III",
+          diplomaProcess: "- process, quality, methods",
+          diplomaManagement: "- management"
+        },
+      };
+      function setLanguage(lang) {
+        document.title = i18n[lang].pageTitle;
+        document.querySelectorAll("[data-i18n-key]").forEach((el) => {
+          const key = el.getAttribute("data-i18n-key");
+          if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+        });
+      }
+      document
+        .getElementById("lang-toggle")
+        .addEventListener("change", (e) =>
+          setLanguage(e.target.checked ? "en" : "fr")
+        );
+      function openTab(evt, tabName) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((tc) => (tc.style.display = "none"));
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.classList.remove("active"));
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        setLanguage("fr");
+        document.querySelector(".tab.active").click();
+      });
+    </script>
+  </body>
+</html>

@@ -336,7 +336,7 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                 margin-top: 12px;
             }
         }
-        /* Conteneur de l’onglet */
+        /* Conteneur de l'onglet */
         .tab-content {
             width: 500px;       /* même largeur partout */
         /* plus de overflow:hidden */
@@ -358,7 +358,7 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
         border-radius: 8px;
         }
 
-        /* (reste de vos styles d’onglets inchangés) */
+        /* (reste de vos styles d'onglets inchangés) */
         .tab-container { display: flex; gap: 10px; margin-bottom: 20px; }
         .tab { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
         .tab.active { background: #4fc3f7; color: #1a1a1a; }
@@ -485,39 +485,126 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                     <a href="https://github.com/itsrim" target="_blank">https://github.com/itsrim</a>
                 </div>
                 
-                <div class="tab-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button class="tab active" onclick="openTab(event, 'tab1')" >City OpenData</button>
-                    <button class="tab" onclick="openTab(event, 'tab2')" >Roller dance</button>
-                    <button class="tab" onclick="openTab(event, 'tab3')" >MapStyle</button>
-                    <button class="tab" onclick="openTab(event, 'tab4')" >Chatbot IA</button>
-                    <button class="tab" onclick="openTab(event, 'tab5')" >App Travel</button>
+                <div class="tab-container">
+                    <button class="tab active" onclick="openTab(event, 'tab1')">City OpenData</button>
+                    <button class="tab" onclick="openTab(event, 'tab2')">Roller dance</button>
+                    <button class="tab" onclick="openTab(event, 'tab3')">MapStyle</button>
+                    <button class="tab" onclick="openTab(event, 'tab4')">Chatbot IA</button>
+                    <button class="tab" onclick="openTab(event, 'tab5')">App Travel</button>
                 </div>
                 
-                <div id="tab1" class="tab-content" style="display: block;">
-                    <p style="color: #e0e0e0;">2nd prix : Hackathon OpenData Turku 2020 <a href="https://github.com/itsrim/turku">github</a></p>
-                    <img src="https://github.com/itsrim/turku/raw/master/docs/A.png" alt="Covid Dashboard" style="height: 500px; width: auto; border-radius: 8px; margin: 10px 0;">
-                </div>
-                
-                <div id="tab2" class="tab-content" style="display: none;">
-                    <p style="color: #e0e0e0;">Paris roller dance<a href="https://parisrollerdance.fr">website</a></p>
-                    <img src="https://raw.githubusercontent.com/rim31/rim31.github.io/refs/heads/master/images/4.jpg" alt="Travel Demo" style="height: 500px; width: auto; border-radius: 8px; margin: 10px 0;">
-                </div>
-                
-                <div id="tab3" class="tab-content" style="display: none;">
-                    <p style="color: #e0e0e0;">2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href="https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42">Institut Français de la Mode</a></p>
-                    <img src="https://d2mulcrgfv1yq5.cloudfront.net/images/_ratio1x1_crop_5/Ressources.jpg" alt="MapStyle Demo" style="height: 500px; width: auto; border-radius: 8px; margin: 10px 0;">
+                <div class="tab-content-container">
+                    <div id="tab1" class="tab-content">
+                        <p>2nd prix : Hackathon OpenData Turku 2020 <a href="https://github.com/itsrim/turku">github</a></p>
+                        <div class="image-container">
+                            <img src="https://github.com/itsrim/turku/raw/master/docs/A.png" alt="Covid Dashboard">
+                        </div>
+                    </div>
+                    
+                    <div id="tab2" class="tab-content">
+                        <p>Paris roller dance<a href="https://parisrollerdance.fr">website</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/rim31/rim31.github.io/refs/heads/master/images/4.jpg" alt="Travel Demo">
+                        </div>
+                    </div>
+                    
+                    <div id="tab3" class="tab-content">
+                        <p>2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href="https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42">Institut Français de la Mode</a></p>
+                        <div class="image-container">
+                            <img src="https://d2mulcrgfv1yq5.cloudfront.net/images/_ratio1x1_crop_5/Ressources.jpg" alt="MapStyle Demo">
+                        </div>
+                    </div>
+
+                    <div id="tab4" class="tab-content">
+                        <p>Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href="https://github.com/itsrim/cat">github</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/itsrim/cat/main/chatbot.gif" alt="Chatbot Demo">
+                        </div>
+                    </div>
+
+                    <div id="tab5" class="tab-content">
+                        <p>test app travel PWA, react, ts, vite, bulma <a href="https://github.com/itsrim/voyage">github</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/itsrim/voyage/refs/heads/main/portugay.png" alt="Travel Demo">
+                        </div>
+                    </div>
                 </div>
 
-                <div id="tab4" class="tab-content" style="display: none;">
-                    <p style="color: #e0e0e0;">Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href="https://github.com/itsrim/cat">github</a></p>
-                    <img src="https://raw.githubusercontent.com/itsrim/cat/main/chatbot.gif" alt="Chatbot Demo" style="height: 500px; width: auto; border-radius: 8px; margin: 10px 0;">
-                </div>
+                <style>
+                    .projects {
+                        background: #252525;
+                        border-radius: 8px;
+                        padding: 18px 20px;
+                        margin-top: 32px;
+                    }
 
-                <div id="tab5" class="tab-content" style="display: none;">
-                    <p style="color: #e0e0e0;">test app travel PWA, react, ts, vite, bulma <a href="https://github.com/itsrim/voyage">github</a></p>
-                    <img src="https://raw.githubusercontent.com/itsrim/voyage/refs/heads/main/portugay.png" alt="Travel Demo" style="height: 500px; width: auto; border-radius: 8px; margin: 10px 0;">
-                </div>
- 
+                    .tab-container {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                        flex-wrap: wrap;
+                    }
+
+                    .tab {
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: #333;
+                        color: #4fc3f7;
+                        transition: all 0.3s ease;
+                    }
+
+                    .tab.active {
+                        background: #4fc3f7;
+                        color: #1a1a1a;
+                    }
+
+                    .tab-content-container {
+                        position: relative;
+                        min-height: 400px;
+                        background: #1a1a1a;
+                        border-radius: 8px;
+                        overflow: hidden;
+                    }
+
+                    .tab-content {
+                        display: none;
+                        padding: 20px;
+                        color: #e0e0e0;
+                    }
+
+                    .tab-content p {
+                        margin-bottom: 16px;
+                    }
+
+                    .image-container {
+                        width: 100%;
+                        height: 350px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        background: #1a1a1a;
+                        border-radius: 8px;
+                    }
+
+                    .image-container img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+                        border-radius: 8px;
+                    }
+
+                    .tab-content a {
+                        color: #4fc3f7;
+                        text-decoration: none;
+                    }
+
+                    .tab-content a:hover {
+                        text-decoration: underline;
+                    }
+                </style>
 
                 <script>
                 function openTab(evt, tabName) {
@@ -527,15 +614,12 @@ ssi        .resume, .languages, .sport, .diploma, .references, .skills {
                     }
                     var tablinks = document.getElementsByClassName("tab");
                     for (var i = 0; i < tablinks.length; i++) {
-                        tablinks[i].style.background = "#333";
-                        tablinks[i].style.color = "#4fc3f7";
+                        tablinks[i].classList.remove("active");
                     }
                     document.getElementById(tabName).style.display = "block";
-                    evt.currentTarget.style.background = "#4fc3f7";
-                    evt.currentTarget.style.color = "#1a1a1a";
+                    evt.currentTarget.classList.add("active");
                 }
 
-                // Initialiser le premier onglet comme actif au chargement
                 document.addEventListener("DOMContentLoaded", function() {
                     document.querySelector(".tab.active").click();
                 });
