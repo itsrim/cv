@@ -389,7 +389,7 @@
         </div>
         <div class="header-contact">
           <div class="header-email">os...@...42.fr</div>
-          <div class="header-phone">+33 6......</div>
+          <div class="header-phone" id="header-phone" style="cursor:pointer;">📱 +33 ...(click)</div>
           <a
             href="https://www.linkedin.com/in/rim31/"
             target="_blank"
@@ -948,6 +948,19 @@
       document.addEventListener("DOMContentLoaded", () => {
         setLanguage("fr");
         document.querySelector(".tab.active").click();
+      });
+      document.addEventListener("DOMContentLoaded", function() {
+        const phoneDiv = document.getElementById("header-phone");
+        let revealed = false;
+        phoneDiv.addEventListener("click", function() {
+          if (!revealed) {
+            phoneDiv.textContent = "📱 ＋336️⃣ 6️⃣2️⃣ 0️⃣9️⃣ 8️⃣1️⃣ 5️⃣5️⃣";
+            revealed = true;
+          } else {
+            phoneDiv.textContent = "📱 ...(click)";
+            revealed = false;
+          }
+        });
       });
     </script>
   </body>
