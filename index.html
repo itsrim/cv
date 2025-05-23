@@ -65,13 +65,13 @@
         color: #fff;
       }
       .slider::before {
-        content: "FR";
+        content: "FR 🇫🇷";
       }
       .switch input:checked + .slider {
         left: calc(100% - 2px - 50%);
       }
       .switch input:checked + .slider::before {
-        content: "EN";
+        content: "EN 🇬🇧";
       }
       .switch input:not(:checked) ~ .lang-label[data-lang="fr"],
       .switch input:checked ~ .lang-label[data-lang="en"] {
@@ -399,10 +399,10 @@
         </div>
         <div class="lang-switcher">
           <label class="switch">
-            <span class="lang-label" data-lang="fr">FR</span>
+            <span class="lang-label" data-lang="fr">FR 🇫🇷</span>
             <input type="checkbox" id="lang-toggle" />
             <span class="slider"></span>
-            <span class="lang-label" data-lang="en">EN</span>
+            <span class="lang-label" data-lang="en">EN 🇬🇧</span>
           </label>
         </div>
       </div>
