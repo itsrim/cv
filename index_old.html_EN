@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rim </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+        .cv-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: #2d2d2d;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .main {
+            flex: 2;
+            padding: 40px 32px 32px 40px;
+        }
+        .sidebar {
+            flex: 1;
+            background: #252525;
+            padding: 40px 0;  /* Modifié : retrait du padding horizontal */
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: center;  /* Ajouté : centrage horizontal */
+        }
+        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: #333333;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 0 auto;  /* Modifié : centrage automatique */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            width: calc(100% - 80px);  /* Modifié : largeur avec marge égale */
+            box-sizing: border-box;
+        }
+        h1, h2, h3 {
+            color: #4fc3f7;
+            margin-bottom: 8px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #4fc3f7;
+        }
+        .job-company {
+            font-weight: bold;
+            color: #e0e0e0;  /* Modifié de #222 à #e0e0e0 */
+        }
+        .job-title {
+            font-weight: bold;
+            color: #4fc3f7;  /* Harmonisé avec le thème */
+        }
+        .techno {
+            font-size: 0.95em;
+            color: #4fc3f7;  /* Modifié de #1a73e8 à #4fc3f7 */
+            margin-top: 4px;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #4fc3f7;  /* Modifié de #1a73e8 à #4fc3f7 */
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: #252525;  /* Modifié de #fff à #252525 */
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            color: #e0e0e0;
+        }
+        .projects {
+            background: #252525;  /* Modifié de #fff à #252525 */
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 32px;
+        }
+        .badge {
+            background: #4fc3f7;  /* Modifié de #1a73e8 à #4fc3f7 */
+            color: #1a1a1a;
+            border-radius: 16px;
+            padding: 4px 12px;
+            font-size: 0.95em;
+            display: inline-block;
+        }
+        .job-list {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+            color: #e0e0e0;  /* Ajouté pour assurer la lisibilité */
+        }
+ssi        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: black;  /* Fond sombre uniforme */
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            color: #e0e0e0;  /* Texte clair pour la lisibilité */
+        }
+
+        .projects {
+            background: #252525;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 32px;
+            color: #e0e0e0;
+        }
+
+        /* Harmonisation des couleurs des liens */
+        .projects a, .sport a, .diploma a, .references a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+        /* Style des liens au survol */
+        .projects a:hover, .sport a:hover, .diploma a:hover, .references a:hover {
+            text-decoration: underline;
+        }
+
+        /* Suppression des styles en double qui causent des conflits */
+        .job-title {
+            font-weight: bold;
+            color: #4fc3f7;  /* Harmonisé avec le thème */
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #4fc3f7;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Style pour le texte en italique dans les sections */
+        .sport div[style*="font-style:italic"],
+        .diploma div[style*="font-style:italic"],
+        .references div[style*="font-style:italic"] {
+            color: #4fc3f7 !important;
+        }
+        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: #333333;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .projects {
+            background: #252525;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 32px;
+        }
+        .projects a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 32px;
+        }
+        .experience {
+            margin-bottom: 32px;
+        }
+        .job {
+            margin-bottom: 24px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #4fc3f7;
+        }
+        .job-company {
+            font-weight: bold;
+            color: #222;
+        }
+        .job-date {
+            font-size: 0.95em;
+            color: #888;
+        }
+        .job-list {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+        .techno {
+            font-size: 0.95em;
+            color: #1a73e8;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        .resume, .languages, .sport, .diploma, .references, .skills {
+            background: black;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .languages img {
+            width: 32px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .badge {
+            background: #1a73e8;
+            color: #fff;
+            border-radius: 16px;
+            padding: 4px 12px;
+            font-size: 0.95em;
+            display: inline-block;
+        }
+        .projects {
+            background: black;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 32px;
+        }
+        .projects a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .projects a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            .cv-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                min-width: unset;
+                padding: 24px 16px;
+            }
+            .main {
+                padding: 24px 16px 16px 16px;
+            }
+        }
+        .header-cv {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+            z-index: 1;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 40px 0 40px;
+        }
+        .header-photo img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            background: #fff;
+        }
+        .header-photo {
+            margin-right: 32px;
+        }
+        .header-info {
+            flex: 2;
+        }
+        .header-name {
+            font-size: 2.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .header-title {
+            font-size: 1.6rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        .header-contact {
+            text-align: right;
+            flex: 1;
+        }
+        .header-email {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .header-phone {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px 16px 0 16px;
+            }
+            .header-contact {
+                text-align: left;
+                margin-top: 12px;
+            }
+        }
+        /* Conteneur de l'onglet */
+        .tab-content {
+            width: 500px;       /* même largeur partout */
+        /* plus de overflow:hidden */
+        }
+        .tab-content {
+        width: 500px;
+        height: 350px;            /* hauteur fixe */
+        background: #1a1a1a;      /* ou la couleur de fond de votre section */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .tab-content img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;      /* = pas de découpe */
+        display: block;
+        border-radius: 8px;
+        }
+
+        /* (reste de vos styles d'onglets inchangés) */
+        .tab-container { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+        .tab.active { background: #4fc3f7; color: #1a1a1a; }
+        .tab:not(.active) { background: #333; color: #4fc3f7; }
+
+    </style>
+</head>
+<body>
+    <div class="header-cv">
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <div class="header-photo">
+                <img src="https://cdn.intra.42.fr/users/9a45b7b744ea6b6475634302561f34db/oseng.jpg" alt="Photo Olivier S.">
+            </div>
+            <div class="header-info">
+                <div class="header-name">Olivier S.</div>
+                <div class="header-title">Developer</div>
+            </div>
+            <div class="header-contact">
+                <div class="header-email">os...@...42.fr</div>
+                <div class="header-phone">+33 6......</div>
+                <a href="https://www.linkedin.com/in/rim31/" target="_blank" style="color:#fff;">https://www.linkedin.com/in/rim31/</a>
+            </div>
+        </div>
+    </div>
+    <div class="cv-container">
+        <div class="main">
+            <h1>Experience</h1>
+            <table class="experience-table" style="width:100%; border-collapse: collapse;">
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        MyUnisoft<br><span style='font-size:0.95em;color:#888;'>Since Apr 2021</span>
+                        <img src="https://myunisoft.fr/wp-content/uploads/2024/05/Logo-header.png" alt="logo1" style="width: 80px; height: auto; margin-top: 8px; background-color: #fff;padding: 5px 5px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Expert Accounting Saas : frontend Senior developer</span><br>
+                        <ul class="job-list">
+                            <li>Creation of a chatbot IA with Claude ai model</li>
+                            <li>User tracking service logging every customer's actions (CRUD and click)</li>
+                            <li>Cypress implementation for e2e testing</li>
+                            <li>Refactoring Loan's software : rate variable, constant, in fine</li>
+                            <li>OCR improvement, read bill's picture convert to accounting data</li>
+                        </ul>
+                        <div class="techno">Techno : React, Redux, Mui, Confluence, Jira, Jest cypress, css, html, javascript</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        Eee.do<br><span style='font-size:0.95em;color:#888;'>Oct 20 / Mar 21</span>
+                        <img src="https://eee.do/wp-content/uploads/2017/01/eeedo_logo_white_500x100-250x50@2x.png" alt="logo2" style="width: 80px; height: auto; margin-top: 8px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Fullstack developer, Finland</span><br>
+                        <ul class="job-list">
+                            <li>Customer service Saas : added time tracking, integration testing, costumer settings, debugs,…</li>
+                            <li>Developing features/ releases/ deployment in the white brand software</li>
+                        </ul>
+                        <div class="techno">Techno : React, Redux, Node JS, Docker, Kubernetes, Confluence, Jira, Jest cypress, css</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        Freelance<br><span style='font-size:0.95em;color:#888;'>Feb - Sept 20</span>
+                        <img src="https://cdn-ilcplod.nitrocdn.com/dCmElblKuSxWBsjjwqhWacoMKlodKItv/assets/images/optimized/astekgroup.fr/wp-content/uploads/2024/12/b7ae8d00-1752-4598-aae2-3bf2dee98d1e-1.png" alt="logo3" style="width: 80px; height: auto; margin-top: 8px; background-color: #fff;padding: 5px 5px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Software developer full stack</span><br>
+                        <ul class="job-list">
+                            <li>COVID-19 break : <a href="https://rim31.github.io/covid19" target="_blank">https://rim31.github.io/covid19</a></li>
+                            <li>Refactoring website : backend, front-end, design, POC of techno</li>
+                            <li>Dashboard open data Turku city. Astek consulting.</li>
+                        </ul>
+                        <div class="techno">Techno : React JS - Native /Vue JS, typescript, python Django, GraphQL, git, html, css</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        INPI : inpi.fr<br><span style='font-size:0.95em;color:#888;'>2018-2019</span>
+                        <img src="https://www.inpi.fr/themes/custom/inpi/logo.png" alt="logo4" style="width: 80px; height: auto; margin-top: 8px; background-color: #fff;padding: 5px 5px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Developer - IT transformation of patents - France government</span><br>
+                        <ul class="job-list">
+                            <li>IA project for patents' classification : order texts for engineers</li>
+                            <li>Project manager brand's deposit : transformation fax to website</li>
+                            <li>Software manager : debug legacy softwares, customer support</li>
+                            <li>Responsible 30 legacy softwares</li>
+                        </ul>
+                        <div class="techno">Techno : PHP, javascript, mysql, oracle, bash, git, html, css</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        vente-privée:<br>veepee.com<br><span style='font-size:0.95em;color:#888;'>2017-2018</span>
+                        <img src="https://www.guide-vente-privee.fr/data/medias/logos/vente-privee-com.png" alt="logo5" style="width: 80px; height: auto; margin-top: 8px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Software developer - innovation Lab42 R&D</span><br>
+                        <ul class="job-list">
+                            <li>E-market : Research & Development in new technologies</li>
+                            <li>Creation of a camera's software : control a robot camera for 100k photos/month</li>
+                            <li>Machine learning : detects clothes / fashion style in a photo - suggest same clothes in our warehouse-database</li>
+                            <li>Proof Of Concept with Kafka : test for 4 millions connections/sec</li>
+                        </ul>
+                        <div class="techno">Techno : Node JS, Vue JS, DMX light protocol, C++, API, git, html, css<br>Tensor flow, python flask, React, mysql, docker, aws, rancher, html, css, js<br>Kafka Apache, docker, grafana, git, html, css, agil, scrumm</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
+                        VEOLIA EAU</br><span style='font-size:0.95em;color:#888;'>2010-2014</span>
+                        <img src="https://www.service.eau.veolia.fr/files/live/sites/veolia/files/contributed/all/new%20logo.png" alt="logo5" style="width: 80px; height: auto; margin-top: 8px;">
+                    </td>
+                    <td style="vertical-align: top; padding: 12px 0 24px 0;">
+                        <span class="job-title">Chemistry environment engineer / project manager</span><br>
+                        <ul class="job-list">
+                            <li>Veolia / Antea Group / UPSA pharmaceutical / Fluids Services</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <div class="projects">
+                <div class="section-title">Projects :</div>
+                <div style="font-weight:bold;color:#1976d2;margin-bottom:16px;">
+                    <a href="https://github.com/itsrim" target="_blank">https://github.com/itsrim</a>
+                </div>
+                
+                <div class="tab-container">
+                    <button class="tab active" onclick="openTab(event, 'tab1')">City OpenData</button>
+                    <button class="tab" onclick="openTab(event, 'tab2')">Roller dance</button>
+                    <button class="tab" onclick="openTab(event, 'tab3')">MapStyle</button>
+                    <button class="tab" onclick="openTab(event, 'tab4')">Chatbot IA</button>
+                    <button class="tab" onclick="openTab(event, 'tab5')">App Travel</button>
+                </div>
+                
+                <div class="tab-content-container">
+                    <div id="tab1" class="tab-content">
+                        <p>2nd prix : Hackathon OpenData Turku 2020 <a href="https://github.com/itsrim/turku">github</a></p>
+                        <div class="image-container">
+                            <img src="https://github.com/itsrim/turku/raw/master/docs/A.png" alt="Covid Dashboard">
+                        </div>
+                    </div>
+                    
+                    <div id="tab2" class="tab-content">
+                        <p>Paris roller dance<a href="https://parisrollerdance.fr">website</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/rim31/rim31.github.io/refs/heads/master/images/4.jpg" alt="Travel Demo">
+                        </div>
+                    </div>
+                    
+                    <div id="tab3" class="tab-content">
+                        <p>2ème prix : MapStyle - Avril 2017 : Ecole 42 + <a href="https://www.ifmparis.fr/fr/actualites/atelier-institut-francais-de-la-mode-ecole-42">Institut Français de la Mode</a></p>
+                        <div class="image-container">
+                            <img src="https://d2mulcrgfv1yq5.cloudfront.net/images/_ratio1x1_crop_5/Ressources.jpg" alt="MapStyle Demo">
+                        </div>
+                    </div>
+
+                    <div id="tab4" class="tab-content">
+                        <p>Chatbot ai, using Claude ai, jest test, react ts, mono repo <a href="https://github.com/itsrim/cat">github</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/itsrim/cat/main/chatbot.gif" alt="Chatbot Demo">
+                        </div>
+                    </div>
+
+                    <div id="tab5" class="tab-content">
+                        <p>test app travel PWA, react, ts, vite, bulma <a href="https://github.com/itsrim/voyage">github</a></p>
+                        <div class="image-container">
+                            <img src="https://raw.githubusercontent.com/itsrim/voyage/refs/heads/main/portugay.png" alt="Travel Demo">
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .projects {
+                        background: #252525;
+                        border-radius: 8px;
+                        padding: 18px 20px;
+                        margin-top: 32px;
+                    }
+
+                    .tab-container {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                        flex-wrap: wrap;
+                    }
+
+                    .tab {
+                        padding: 8px 16px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        background: #333;
+                        color: #4fc3f7;
+                        transition: all 0.3s ease;
+                    }
+
+                    .tab.active {
+                        background: #4fc3f7;
+                        color: #1a1a1a;
+                    }
+
+                    .tab-content-container {
+                        position: relative;
+                        min-height: 400px;
+                        background: #1a1a1a;
+                        border-radius: 8px;
+                        overflow: hidden;
+                    }
+
+                    .tab-content {
+                        display: none;
+                        padding: 20px;
+                        color: #e0e0e0;
+                    }
+
+                    .tab-content p {
+                        margin-bottom: 16px;
+                    }
+
+                    .image-container {
+                        width: 100%;
+                        height: 350px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        background: #1a1a1a;
+                        border-radius: 8px;
+                    }
+
+                    .image-container img {
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+                        border-radius: 8px;
+                    }
+
+                    .tab-content a {
+                        color: #4fc3f7;
+                        text-decoration: none;
+                    }
+
+                    .tab-content a:hover {
+                        text-decoration: underline;
+                    }
+                </style>
+
+                <script>
+                function openTab(evt, tabName) {
+                    var tabcontent = document.getElementsByClassName("tab-content");
+                    for (var i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    var tablinks = document.getElementsByClassName("tab");
+                    for (var i = 0; i < tablinks.length; i++) {
+                        tablinks[i].classList.remove("active");
+                    }
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.classList.add("active");
+                }
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.querySelector(".tab.active").click();
+                });
+                </script>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="resume">
+                <div class="section-title">Resume</div>
+                <div style="font-size:1em;line-height:1.5;">
+                    Software developer since 8 years experience and trained at 42 coding School Paris, I have been able to enhance my experiences as chemistry engineer with computer science.<br><br>
+                    I develop in different langages as a full-stack developer (front, back, mobile).<br>
+                    I like challenges and follow new technologies (VR, AI, e-commerce, …)
+                </div>
+            </div>
+
+            <div class="skills" style="background:#1a73e8;color:#fff;text-align:center;"> 
+                <div class="badges" style="justify-content:center;flex-wrap:wrap;gap:10px;display:flex;align-items:center;"> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="width:20px;height:20px;">
+                React / native
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" style="width:20px;height:20px;">
+                Vue / Node
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width:20px;height:20px;">
+                javascript, html, css
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:20px;height:20px;">
+                Python / Flask
+                </span> 
+                <span class="badge" style="background:#43aeea;display:flex;align-items:center;gap:5px;">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" style="width:20px;height:20px;">
+                PHP / Laravel
+                </span> 
+                </div> 
+                </div>
+
+            <div class="languages">
+                <div class="section-title">Langues</div>
+                <table style="width:100%; margin-bottom: 12px;">
+                    <tr>
+                        <td style="text-align:center; padding: 8px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" title="Français" style="width:32px; height:32px;">
+                        </td>
+                        <td style="text-align:center; padding: 8px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="Anglais" title="Anglais" style="width:32px; height:32px;">
+                        </td>
+                        <td style="text-align:center; padding: 8px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Espagnol" title="Espagnol" style="width:32px; height:32px;">
+                        </td>
+                        <td style="text-align:center; padding: 8px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg" alt="Cambodgien" title="Cambodgien" style="width:32px; height:32px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center; font-size:0.8em">French<br><span style="font-size:0.9em;color:#888;">Français</span><br>
+                            <div style="color: #4fc3f7;">●●●●●</div>
+                        </td>
+                        <td style="text-align:center; font-size:0.8em">English<br><span style="font-size:0.9em;color:#888;">Anglais</span><br>
+                            <div style="color: #4fc3f7;">●●●●○</div>
+                        </td>
+                        <td style="text-align:center; font-size:0.8em">Spanish<br><span style="font-size:0.9em;color:#888;">Espagnol</span><br>
+                            <div style="color: #4fc3f7;">●●●○○</div>
+                        </td>
+                        <td style="text-align:center; font-size:0.8em">Cambodian<br><span style="font-size:0.9em;color:#888;">Khmer</span><br>
+                            <div style="color: #4fc3f7;">●●○○○</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sport">
+                <div class="section-title">Sport & leisure</div>
+                <div style="font-size:1em;line-height:1.5;">
+                    <a href="https://www.parisrollerdance.fr" target="_blank" style="color:#1976d2;text-decoration:none;">www.parisrollerdance.fr</a><br>
+                    Roller skating : 25 Years<br>
+                    - Roller Hockey : level National 4<br>
+                    - Ride, artistic, derby, dance<br>
+                    - Roller skating Teacher<br>
+                    <div style="margin-top:10px;font-style:italic;color:#1976d2;">
+                        Journeys : Romania, Italy, Spain, England, Czech, Sweden, Estonia, Netherlands, Finland, Portugal
+                    </div>
+                </div>
+            </div>
+            <div class="diploma">
+                <div class="section-title">Diploma</div>
+                <div style="font-size:1em;line-height:1.5;">
+                    <b>2017 : Ecole 42</b> : <a href="https://www.42.fr" target="_blank" style="color:#1976d2;">www.42.fr</a><br>
+                    Projects : <a href="https://github.com/itsrim" target="_blank" style="color:#1976d2;">https://github.com/itsrim</a><br>
+                    - algorithms, fractal, website, 3D, games<br>
+                    - langages : C, C++, PHP, JS, iOS<br>
+                    <br>
+                    <b>2010 : Master 2</b> process physics - chemistry : University Toulouse III<br>
+                    - process, quality, methods<br>
+                    - management
+                </div>
+            </div>
+            <div class="references">
+                <div class="section-title">References</div>
+                <a href="https://www.linkedin.com/in/rim31/" target="_blank" style="color:#1976d2;">https://www.linkedin.com/in/rim31/</a>
+            </div>
+           
+        </div>
+    </div>
+</body>
+</html>
