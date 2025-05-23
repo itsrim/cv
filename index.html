@@ -347,6 +347,28 @@
           text-align: center;
         }
       }
+      @media (max-width: 700px) {
+        .experience-table,
+        .experience-table tbody,
+        .experience-table tr {
+          display: block;
+          width: 100%;
+        }
+        .experience-table td {
+          display: block;
+          width: 100% !important;
+          box-sizing: border-box;
+          padding: 12px 0 !important;
+        }
+        .experience-table tr {
+          margin-bottom: 24px;
+          border-bottom: 1px solid #444;
+        }
+        .experience-table td:first-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -389,10 +411,7 @@
     <div class="cv-container">
       <div class="main">
         <h1 data-i18n-key="experience">Expérience</h1>
-        <table
-          class="experience-table"
-          style="width: 100%; border-collapse: collapse"
-        >
+        <table class="experience-table">
           <!-- MyUnisoft -->
           <tr>
             <td style="vertical-align: top; padding: 12px 12px 24px 0; width: 100px; font-weight: bold;">
